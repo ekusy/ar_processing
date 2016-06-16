@@ -8,6 +8,7 @@ Capture cam;
 MultiMarker nya;
 Sweat s;
 Model model;
+Hello h;
 
 float ang=180.0;
 PImage texture;
@@ -32,13 +33,15 @@ void setup() {
   //model.setTexture(texture);
   model = new Model(this);
   s = new Sweat();
+  h = new Hello();
   noStroke();
 }
 
 void draw()
 {
+  println(millis());
   if (cam.available() !=true) {
-    //println("not available");  
+    println("not available");  
     return;
   }
   sphere(30);
@@ -55,7 +58,7 @@ void draw()
   //translate(0.0, 90.0, 0.0);
   //model.enableTexture();
   model.Draw();
-  
+  h.Draw();
   s.Draw();
   //popMatrix();
   nya.endTransform();
@@ -71,5 +74,8 @@ void keyPressed() {
   }
   else if(key == 's'){
      s.start(); 
+  }
+  else if(key == 'h'){
+     h.start(); 
   }
 }

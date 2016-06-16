@@ -9,29 +9,37 @@ class Timer {
 
   Timer(float _time) {//秒
     mTime = int(_time*1000);
-    startTime = millis();
     count = 0;
     addCount = 1;
-    flg =true;
   }
 
   Timer(float _time, int _add) {
     mTime = int(_time*1000);
-    startTime = millis();
     count = 0;
     addCount = _add;
-    flg =true;
   }
   
-  boolean CheckFlg(){
-     return flg; 
+  void startTimer(){
+     flg=true;
+     startTime = millis();
+  }
+
+  boolean checkFlg() {
+    return flg;
   }
 
   boolean checkTimer() {
-    if (millis() < startTime+mTime)
+    if (millis() < startTime+mTime) {
+      count+=addCount;
       return true;
-    else
+    } else {
       flg = false;
+      count=0;
       return false;
+    }
+  }
+
+  int getCount() {
+    return count;
   }
 }
