@@ -1,14 +1,12 @@
-class Sweat {
-  private  int y;
+class Sweat{
   private PImage img;
   private int count;
   private float time = 0.8;
-
-  private int mCount;
   private int mTime;
 
   private int startTime;
   private boolean flg = false;
+
   Sweat() {
     img = loadImage("./data/sweat.png");
     mTime = int(time*1000);
@@ -16,11 +14,14 @@ class Sweat {
 
   public void start()
   {
-    startTime = millis();
-    flg = true;
+    if (flg==false) {
+      count = 0;
+      startTime = millis();
+      flg = true;
+    }
   }
 
-  public void drawSweat()
+  public void Draw()
   {
     if (!(millis()>startTime+mTime) && flg == true) {
       println("sweat:"+count);
@@ -30,7 +31,8 @@ class Sweat {
       scale(0.5);
       image(img, 0.0, count);
       popMatrix();
+    } else {
+      flg=false;
     }
   }
 }
-

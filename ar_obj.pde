@@ -28,8 +28,8 @@ void setup() {
   model.scale(120);
   model.setDrawMode(POLYGON);
   model.texture(texture);
-  s = new Sweat();
   model.setTexture(texture);
+  s = new Sweat();
   noStroke();
 }
 
@@ -55,7 +55,7 @@ void draw()
 
   model.draw();
   
-  s.drawSweat();
+  s.Draw();
   popMatrix();
   nya.endTransform();
 }
