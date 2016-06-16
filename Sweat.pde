@@ -9,7 +9,7 @@ class Sweat extends Object{
 
   Sweat() {
     super("Sweat");
-    super.setPosition(20.0, -300.0, 60.0);
+    super.setPosition(20.0, -220.0, 60.0);
     img = loadImage("./data/sweat.png");
     mTime = int(time*1000);
   }
