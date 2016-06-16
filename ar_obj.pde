@@ -3,10 +3,11 @@ import saito.objloader.*;
 import processing.video.*;
 import jp.nyatla.nyar4psg.*;
 
-OBJModel model;
+//OBJModel model;
 Capture cam;
 MultiMarker nya;
 Sweat s;
+Model model;
 
 float ang=180.0;
 PImage texture;
@@ -22,13 +23,14 @@ void setup() {
   cam.start();
   println("start");
   smooth();
-  texture = loadImage("data/Bear.png");
-  model = new OBJModel(this);
-  model.load("data/Bear.obj");
-  model.scale(120);
-  model.setDrawMode(POLYGON);
-  model.texture(texture);
-  model.setTexture(texture);
+  //texture = loadImage("data/Bear.png");
+  //model = new OBJModel(this);
+  //model.load("data/Bear.obj");
+  //model.scale(120);
+  //model.setDrawMode(POLYGON);
+  //model.texture(texture);
+  //model.setTexture(texture);
+  model = new Model(this);
   s = new Sweat();
   noStroke();
 }
@@ -48,15 +50,14 @@ void draw()
     return;
   }
   nya.beginTransform(0);
-  pushMatrix();
-  rotateZ(radians(ang));
-  translate(0.0, 90.0, 0.0);
-  model.enableTexture();
-
-  model.draw();
+  //pushMatrix();
+  //rotateZ(radians(ang));
+  //translate(0.0, 90.0, 0.0);
+  //model.enableTexture();
+  model.Draw();
   
   s.Draw();
-  popMatrix();
+  //popMatrix();
   nya.endTransform();
 }
 

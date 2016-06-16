@@ -29,9 +29,10 @@ class Sweat extends Object{
       println("sweat:"+count);
       count+=3;
       pushMatrix();
+      rotateZ(radians(180.0));
       translate(pos.x,pos.y,pos.z);
       translate(0.0,count,0.0);
-      scale(0.5);
+      scale(0.3);
       image(img, 0.0, count);
       popMatrix();
     } else {
