@@ -17,7 +17,7 @@ class Model {
     model.setTexture(texture);
   }
   
-  public Draw(){
-    
+  public void Draw(){
+    model.draw();
   }
 }

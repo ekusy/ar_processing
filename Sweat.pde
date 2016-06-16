@@ -1,4 +1,4 @@
-class Sweat{
+class Sweat extends Object{
   private PImage img;
   private int count;
   private float time = 0.8;
@@ -8,6 +8,8 @@ class Sweat{
   private boolean flg = false;
 
   Sweat() {
+    super("Sweat");
+    super.setPosition(20.0, -300.0, 60.0);
     img = loadImage("./data/sweat.png");
     mTime = int(time*1000);
   }
@@ -27,7 +29,8 @@ class Sweat{
       println("sweat:"+count);
       count+=3;
       pushMatrix();
-      translate(20, -300.0+count, 60.0);
+      translate(pos.x,pos.y,pos.z);
+      translate(0.0,count,0.0);
       scale(0.5);
       image(img, 0.0, count);
       popMatrix();

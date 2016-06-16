@@ -1,3 +1,0 @@
-interface Method{
-  void Draw(); 
-}
